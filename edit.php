@@ -27,7 +27,7 @@ include 'nav.php';
 			<th></th>
 		</tr>
 		<?php
-		$sql = 'SELECT users.name,users.email,countries.country FROM users JOIN countries ON users.country_id=countries.id';
+		$sql = 'SELECT users.id,users.name,users.email,countries.country FROM users JOIN countries ON users.country_id=countries.id';
 		$stmt = $db->prepare($sql);
 		if(!$stmt) {
 			header('Location: index.php?err=sqlerr');
@@ -35,15 +35,16 @@ include 'nav.php';
 		} else {
 			$stmt->execute();
 			$stmt->store_result();
-			$stmt->bind_result($user, $email, $country);
+			$stmt->bind_result($id, $user, $email, $country);
 			while($stmt->fetch()) { 
 				?>
-				<form action='delete.inc.php' method='post'>
+				<form action='edit.inc.php' method='post'>
 					<tr>
-						<?php echo "<td><input type='text' class='hid' name='name' value='".$user."' readonly></td>"; ?>
-						<?php echo "<td><input type='text' class='hid' name='email' value='".$email."' readonly></td>"; ?>
-						<?php echo "<td><input type='text' class='hid' name='country' value='".$country."' readonly></td>"; ?>
-						<td><input type="submit" name="submit" value='Delete'></td>
+						<?php echo "<td><input type='text' name='name' value='".$user."' ></td>"; ?>
+						<?php echo "<td><input type='text' name='email' value='".$email."' ></td>"; ?>
+						<?php echo "<td><input type='text' class='hid' name='country' value='".$country."' readyonly></td>"; ?>
+						<td><input type="submit" name="submit" value='Edit'></td>
+						<?php echo "<td><input type='text' class='none' name='id' value='".$id."' hidden></td>"; ?>
 					</tr>
 				</form>
 			<?php
