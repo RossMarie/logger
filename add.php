@@ -1,9 +1,10 @@
 <?php 
 include 'nav.php';
-require 'inc/dbh.php';
+require 'autoload.php';
+/*require 'inc/dbh.php';
 require 'inc/getinf.inc.php';
 require 'inc/show.inc.php';
-require 'logger.inc.php';
+require 'logger.inc.php';*/
 ?>
 
 <h1>New Data</h1>

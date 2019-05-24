@@ -15,3 +15,6 @@
 [2019-05-24 02:56:09] my_logger.INFO: User info edited [] []
 [2019-05-24 02:56:35] my_logger.INFO: User info edited [] []
 [2019-05-24 02:56:47] my_logger.INFO: User info edited [] []
+[2019-05-24 03:06:32] my_logger.INFO: New user added [] []
+[2019-05-24 03:46:55] my_logger.INFO: New user added [] []
+[2019-05-24 03:51:00] my_logger.INFO: User deleted [] []

@@ -15,6 +15,10 @@ class ComposerStaticInit4102a1d72c0a6aefa7c20fadb1c138dd
         array (
             'Monolog\\' => 8,
         ),
+        'I' => 
+        array (
+            'Ifsnop\\' => 7,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -25,6 +29,10 @@ class ComposerStaticInit4102a1d72c0a6aefa7c20fadb1c138dd
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Ifsnop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ifsnop/mysqldump-php/src/Ifsnop',
         ),
     );
 

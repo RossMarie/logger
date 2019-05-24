@@ -12,9 +12,7 @@ $logger = new Logger('my_logger');
 $logger->pushHandler(new StreamHandler('log.log', Logger::DEBUG));
 $logger->pushHandler(new FirePHPHandler());
 
-require 'inc/dbh.php';
-require 'inc/getinf.inc.php';
-require 'inc/show.inc.php';
+require 'autoload.php';
 include 'nav.php';
 ?>
 
