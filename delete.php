@@ -3,16 +3,13 @@ if(!isset($_POST['submit'])) {
 	header('Location: index.php');
 	exit();
 } else {
-	require 'dbh.php';
 	require 'logger.inc.php';
+	include 'inc/dbh.php';
+	include 'inc/delete.inc.php';
 	$name = $_POST['name'];
-	echo $name;
-	$sql = 'DELETE FROM users WHERE users.name=?';
-	$stmt = $db->prepare($sql);
-	$stmt->bind_param('s', $name);
-	$stmt->execute();
+	$obj = new DeleteUser;
+	$obj->delete($name);
 	$logger->info('User deleted');
 	header('Location: index.php?succ=deleted');
 	exit();
-	$db->close();
 }
